@@ -1,0 +1,161 @@
+<html lang="de">
+  <head>
+    <title>DBS Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <!-- Google web fonts -->
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel='stylesheet' />
+  </head>
+  <header>
+  
+  </header>
+  <body id="body" align="center">
+    <h1>DBS Project</h1>
+	<div>
+		<!-----------
+		--- VIEWS ---
+		------------>
+		<div id="views">
+			<h3 id="view_header">Views</h3>
+			
+			<form method="POST">
+				<input type="hidden" name="movie_cinema_mix" value="1" />
+				<button type="submit">Current movies</button>
+				<p>Real movies currently running</p>
+			</form>
+			
+			<form method="POST">
+				<input type="hidden" name="tv_show_current" value="1" />
+				<button type="submit">Current TV-Shows</button>
+				<p>Real TV-Shows currently running - only Season 1</p>
+			</form>
+			
+			<div class="prewin">
+				<pre>View Result</pre>
+			</div>
+		</div>
+		
+		<!------------------------
+		--- STORED PROCEDURES, ---
+		---- CURSORS, INDIZES ----
+		------------------------->
+		<div id="stored_procedures">
+			<h3 id="stored_procedures_header">Stored Procedures, Cursors, Indizes</h3>
+			<h4>Search for Movies by Genre</h4>
+			<div id="choicedisplay">
+			  <form method="POST">
+				<input type="hidden" name="movies" value="1" />
+				<button type="submit">Movies</button>
+			  </form>
+			  <form method="POST">
+				<input type="hidden" name="cinemas" value="1" />
+				<button type="submit">Cinemas</button>
+				<p>Movies from 2012 with a runtime longer than 120min</p>
+			  </form>
+			</div>
+
+			<div id="filterface" class="prewin">
+				<pre>Filter Window</pre>
+			</div>
+
+			<div id="select" class="prewin">
+				<pre>Output Window</pre>
+			</div>
+			
+			<h4>Add Genre to Movie</h4>
+			<form method="POST">
+				<input type="text" name="mtitle" placeholder="Movie Title"></input>
+				<input type="text" name="gname" placeholder="Genre Name"></input>
+				<button type="submit">GO!</button>
+			</form>
+
+			<div id="insert" class="prewin">
+				<pre>Insert Result</pre>
+			</div>
+		</div>
+	</div>
+	
+	<!-------------
+	--- TRIGGER ---
+	-------------->
+	<div id="trigger">
+		<h3 id="trigger_header">Trigger</h3>
+		<h5>Add new TV-Show</h5>
+		<form method="POST">
+			<input type="text" name="title" placeholder="Title" />
+			<input type="text" name="release_year" placeholder="Release Year" />
+			<input type="text" name="end_year" placeholder="End Year" />
+			<input type="text" name="running" placeholder="No: 0 / Yes: 1" />
+			<input type="text" name="number_of_seasons" placeholder="Number of Seasons" />
+		
+			<button type="submit">GO!</button>
+		</form>
+		
+		<h5>Add Episode to TV-Show</h5>
+		<form method="POST">
+			<input type="text" name="tv_show" placeholder="TV-Show" />
+			<input type="text" name="title" placeholder="Episode Title" />
+			<input type="text" name="season" placeholder="Season Number" />
+			<input type="text" name="episode" placeholder="Episode Number" />
+		
+			<button type="submit">GO!</button>
+		</form>
+		
+		<div class="prewin">
+			<pre>Result</pre>
+		</div>
+	</div>
+	
+    <!-- JavaScript Includes -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </body>
+  <style>
+	.prewin{
+		width: 60%;
+		margin-left: 20%;
+	}
+	.prewin table{
+		width: 100%;
+	}
+	#views{
+		border: 2px dotted red;
+		margin-left: 20%;
+		width: 60%;
+		border-radius: 10px;
+	}
+	#view_header{
+		color: blue;
+	}
+	#stored_procedures{
+		border: 2px dotted orange;
+		margin-left: 20%;
+		width: 60%;
+		border-radius: 10px;
+		margin-top: 10px;
+	}
+	#stored_procedures_header{
+		color: green;
+	}
+	#trigger{
+		border: 2px dotted purple;
+		margin-left: 20%;
+		width: 60%;
+		border-radius: 10px;
+		margin-top: 10px;
+	}
+	#trigger_header{
+		color: red;
+	}
+	#trigger input{
+		display: block;
+		text-align: center;
+		width: 50%;
+		margin-left: 25%;
+		margin-bottom: 4px;
+	}
+  </style>
+</html>

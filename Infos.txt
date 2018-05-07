@@ -1,0 +1,3 @@
+MS - 	Trigger für:
+Episode: (tv_show_id, season, number) Müssen miteinander UNIQUE sein!
+TV_Show: (release_year > end_year) darf nicht sein

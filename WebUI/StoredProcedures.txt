@@ -1,0 +1,13 @@
+P_SELECT_Genre_AllNames
+List all Genre names.
+
+P_SELECT_MovieXGenre_WhereMovieContainsGenre @GenreList
+List all Movies associated with any number of genres given, if that number is one.
+
+P_INSERT_Genre_OneByName @GenreName
+Insert a new Genre into the Genre table.
+(If Genre already exists, perform ROLLBACK and report error to the user.)
+
+P_INSERT_Movie_Genre_AddGenreToMovie @MovieTitle @GenreName
+Insert an association of a given Movie to a given Genre.
+(If association already exists, perform ROLLBACK and report error to the user.)
